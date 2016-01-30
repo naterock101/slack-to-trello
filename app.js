@@ -49,11 +49,16 @@ function postToTrello(listId, command, text, user_name, cb) {
   }
   
 
-  // //stupid hack for injecting labels
-  // var idLabelColor = null;
-  // if (name_and_desc[2] !== null) {
-  //   idLabelColor = name_and_desc[2].replace(/\s+/g, '');
-  // };
+  //stupid hack for injecting labels
+  var idLabelColor = "";
+  if (trelloArgs[2] == undefined || trelloArgs[2] == null || trelloArgs[2] == "") {
+    idLabelColor = "";
+  } else {
+    idLabelColor = trelloArgs[2].replace(/\s+/g, '');
+  };
+
+  throw new Error('label is ' + idLabelColor);
+
 
   // if (idLabelColor == "backend" || idLabelColor == "lime") {
   //   idLabelColor = "55830296c3caa18119e722c2";
