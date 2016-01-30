@@ -13,7 +13,7 @@ function postToTrello(listId, command, text, user_name, cb) {
   if (text == undefined || text == null || text == "") {
     throw new Error('Format is ' + command + ' name | member | label | description');
   } else {
-    throw new Error('list id is ' listid + ' ' + command);
+    throw new Error('list id is ');
   }
 
   var trelloArgs;
