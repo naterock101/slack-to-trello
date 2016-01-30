@@ -22,34 +22,34 @@ function postToTrello(listId, command, text, user_name, cb) {
   };
 
   //stupid hack for injecting member names
-  var idMembers;
-  if (text.indexOf('|') > -1) {
-    if (trelloArgs[1] == undefined || trelloArgs[1] == null || trelloArgs[1] == "") {
-      idMembers = "";
-    else {
-      idMembers = trelloArgs[1].replace(/\s+/g, '');
-    }  
+  var idMembers = "";
+  // if (text.indexOf('|') > -1) {
+  //   if (trelloArgs[1] == undefined || trelloArgs[1] == null || trelloArgs[1] == "") {
+  //     idMembers = "";
+  //   else {
+  //     idMembers = trelloArgs[1].replace(/\s+/g, '');
+  //   }  
 
-    if (idMembers == "nate" || idMembers == "nathan") {
-      idMembers = "51902656858a2d1d2400371f";
-    } else if (idMembers == "brac") {
-      idMembers = "4fe08f7a29951994158d3359";
-    } else if (idMembers == "zern" || idMembers == "zernyu") {
-      idMembers = "520e839359eba5b04a004244";
-    } else if (idMembers == "gabe" || idMembers == "gabriel") {
-      idMembers = "52d9e572ab5bf0847717c4b1";
-    } else if (idMembers == "garrett" || idMembers == "garett" || idMembers == "garret" || idMembers == "garet") {
-      idMembers = "52fbef485146d913398cb95a";
-    } else if (idMembers == "caroline") {
-      idMembers = "532897b3dda5d9550f86e39b";
-    } else if (idMembers == "dan") {
-      idMembers = "5580a1b779d64277225f6c39";
-    } else if (idMembers == "harris") {
-      idMembers = "52032ab362af020708000872";
-    };
-  } else {
-    idMembers = "";
-  };
+  //   if (idMembers == "nate" || idMembers == "nathan") {
+  //     idMembers = "51902656858a2d1d2400371f";
+  //   } else if (idMembers == "brac") {
+  //     idMembers = "4fe08f7a29951994158d3359";
+  //   } else if (idMembers == "zern" || idMembers == "zernyu") {
+  //     idMembers = "520e839359eba5b04a004244";
+  //   } else if (idMembers == "gabe" || idMembers == "gabriel") {
+  //     idMembers = "52d9e572ab5bf0847717c4b1";
+  //   } else if (idMembers == "garrett" || idMembers == "garett" || idMembers == "garret" || idMembers == "garet") {
+  //     idMembers = "52fbef485146d913398cb95a";
+  //   } else if (idMembers == "caroline") {
+  //     idMembers = "532897b3dda5d9550f86e39b";
+  //   } else if (idMembers == "dan") {
+  //     idMembers = "5580a1b779d64277225f6c39";
+  //   } else if (idMembers == "harris") {
+  //     idMembers = "52032ab362af020708000872";
+  //   };
+  // } else {
+  //   idMembers = "";
+  // };
   
 
   // //stupid hack for injecting labels
