@@ -74,7 +74,7 @@ function postToTrello(listId, command, text, user_name, cb) {
   // };
 
   var card_data = {
-    'name' : name_and_desc + ' (@' + user_name + ')',
+    'name' : name_and_desc[0] + ' (@' + user_name + ')',
     'idMembers' : null,
     'idLabels' : null,
     'desc' : null,
