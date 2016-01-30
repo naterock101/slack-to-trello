@@ -57,28 +57,25 @@ function postToTrello(listId, command, text, user_name, cb) {
     idLabelColor = trelloArgs[2].replace(/\s+/g, '');
   };
 
-  throw new Error('label is ' + idLabelColor);
-
-
-  // if (idLabelColor == "backend" || idLabelColor == "lime") {
-  //   idLabelColor = "55830296c3caa18119e722c2";
-  // } else if (idLabelColor == "frontend" || idLabelColor == "pink") {
-  //   idLabelColor = "558302a5c3caa18119e722e7";
-  // } else if (idLabelColor == "bug" || idLabelColor == "red") {
-  //   idLabelColor = "55778e29664ce8ff30a34400";
-  // } else if (idLabelColor == "firmware" || idLabelColor == "sky" || idLabelColor == "light blue") {
-  //   idLabelColor = "558302acc3caa18119e72307";
-  // } else if (idLabelColor == "system" || idLabelColor == "black") {
-  //   idLabelColor = "55778e29664ce8ff30a343fe";
-  // } else if (idLabelColor == "design" || idLabelColor == "yellow") {
-  //   idLabelColor = "55778e29664ce8ff30a343fc";
-  // } else if (idLabelColor == "greenibl" || idLabelColor == "devops" || idLabelColor == "dev ops") {
-  //   idLabelColor = "55778e29664ce8ff30a343fb";
-  // } else if (idLabelColor == "mechanical" || idLabelColor == "orange") {
-  //   idLabelColor = "5583097cc3caa18119e73487";
-  // } else if (idLabelColor == "improvement" || idLabelColor == "blue") {
-  //   idLabelColor = "55778e29664ce8ff30a343ff";
-  // };
+  if (idLabelColor == "backend" || idLabelColor == "lime") {
+    idLabelColor = "55830296c3caa18119e722c2";
+  } else if (idLabelColor == "frontend" || idLabelColor == "pink") {
+    idLabelColor = "558302a5c3caa18119e722e7";
+  } else if (idLabelColor == "bug" || idLabelColor == "red") {
+    idLabelColor = "55778e29664ce8ff30a34400";
+  } else if (idLabelColor == "firmware" || idLabelColor == "sky" || idLabelColor == "light blue") {
+    idLabelColor = "558302acc3caa18119e72307";
+  } else if (idLabelColor == "system" || idLabelColor == "black") {
+    idLabelColor = "55778e29664ce8ff30a343fe";
+  } else if (idLabelColor == "design" || idLabelColor == "yellow") {
+    idLabelColor = "55778e29664ce8ff30a343fc";
+  } else if (idLabelColor == "greenibl" || idLabelColor == "devops" || idLabelColor == "dev ops") {
+    idLabelColor = "55778e29664ce8ff30a343fb";
+  } else if (idLabelColor == "mechanical" || idLabelColor == "orange") {
+    idLabelColor = "5583097cc3caa18119e73487";
+  } else if (idLabelColor == "improvement" || idLabelColor == "blue") {
+    idLabelColor = "55778e29664ce8ff30a343ff";
+  };
 
   // var cardDescription = null;
   // if (name_and_desc[3] !== null) {
@@ -95,7 +92,7 @@ function postToTrello(listId, command, text, user_name, cb) {
   var card_data = {
     'name' : cardName + ' (@' + user_name + ')',
     'idMembers' : idMembers,
-    'idLabels' : null,
+    'idLabels' : idLabelColor,
     'desc' : null,
     'due' : null,
     'idList' : listId,
