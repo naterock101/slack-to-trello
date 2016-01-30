@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 function postToTrello(listId, command, text, user_name, cb) {
   if (text == undefined || text == null || text == "") {
-    throw new Error('Format is ' + command + ' name | member | label | description');
+    throw new Error('Format is ' + command + ' name | [person] | [label/color] | [description]');
   } 
 
   var trelloArgs;
@@ -45,8 +45,8 @@ function postToTrello(listId, command, text, user_name, cb) {
       idMembers = "5580a1b779d64277225f6c39";
     } else if (idMembers == "harris") {
       idMembers = "52032ab362af020708000872";
-    } else if (idMembers.length > 0){
-      throw new Error('Person you are trying to assign this to is not real. try again.');
+    } else if (idMembers.length > 0) {
+      throw new Error(idMembers + ' is not a real person. Or at least not a fishbit. try again.');
     };
   }
   
@@ -78,7 +78,7 @@ function postToTrello(listId, command, text, user_name, cb) {
   } else if (idLabelColor == "improvement" || idLabelColor == "blue") {
     idLabelColor = "55778e29664ce8ff30a343ff";
   } else if (idLabelColor.length > 0) {
-    throw new Error('Label or Color entered needs work. try again.');
+    throw new Error(idLabelColor + 'is not a valid label or color dude. try again.');
   };
 
   var cardDescription = "";
