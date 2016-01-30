@@ -14,9 +14,11 @@ function postToTrello(listId, command, text, user_name, cb) {
     throw new Error('Format is ' + command + ' name | member | label | description');
   }
 
-  var trelloArgs = text;
+  var trelloArgs;
   if (text.indexOf('|') > -1) {
     trelloArgs = text.split('|');
+  } else {
+    trelloArgs = text;
   };
 
   //stupid hack for injecting member names
