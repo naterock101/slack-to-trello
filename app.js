@@ -92,7 +92,7 @@ function postToTrello(listId, command, text, user_name, cb) {
 
   var card_data = {
     'name' : cardName + ' (@' + user_name + ')',
-    'idMembers' : null,
+    'idMembers' : "",
     'idLabels' : null,
     'desc' : null,
     'due' : null,
