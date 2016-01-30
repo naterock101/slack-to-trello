@@ -16,8 +16,10 @@ function postToTrello(listId, command, text, user_name, cb) {
 
   var trelloArgs;
   if (text.indexOf('|') > -1) {
+    throw new Error('Format is array');
     trelloArgs = text.split('|');
   } else {
+    throw new Error('Format is string');
     trelloArgs = text;
   };
 
