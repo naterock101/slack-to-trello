@@ -117,7 +117,7 @@ app.post('/*', function(req, res, next) {
     var name = data.name;
     var url = data.shortUrl;
 
-    res.status(200).send('Card "' + name + '" created here: <' + url + '>' + ' debug:' + idMembers);
+    res.status(200).send('Card "' + name + '" created here: <' + url + '>');
   });
 });
 
