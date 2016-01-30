@@ -16,10 +16,8 @@ function postToTrello(listId, command, text, user_name, cb) {
 
   var trelloArgs;
   if (text.indexOf('|') > -1) {
-    throw new Error('Format is array');
     trelloArgs = text.split('|');
   } else {
-    throw new Error('Format is string');
     trelloArgs = text;
   };
 
@@ -83,8 +81,10 @@ function postToTrello(listId, command, text, user_name, cb) {
   var cardName;
   if( typeof trelloArgs === 'string' ) {
     cardName = trelloArgs;
+    throw new Error('Format is string ' + cardName + 'listid = ' + listid);
   } else {
     cardName = trelloArgs[0];
+    throw new Error('Format is array ' + cardName + 'listid = ' + listid);
   }
 
   var card_data = {
