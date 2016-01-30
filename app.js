@@ -45,6 +45,8 @@ function postToTrello(listId, command, text, user_name, cb) {
       idMembers = "5580a1b779d64277225f6c39";
     } else if (idMembers == "harris") {
       idMembers = "52032ab362af020708000872";
+    } else {
+      throw new Error('Person you are trying to assign this to is not real. try again.');
     };
   }
   
@@ -75,6 +77,8 @@ function postToTrello(listId, command, text, user_name, cb) {
     idLabelColor = "5583097cc3caa18119e73487";
   } else if (idLabelColor == "improvement" || idLabelColor == "blue") {
     idLabelColor = "55778e29664ce8ff30a343ff";
+  } else {
+    throw new Error('Label or Color entered needs work. try again.');
   };
 
   var cardDescription = "";
