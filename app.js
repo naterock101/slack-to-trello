@@ -12,10 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 function postToTrello(listId, command, text, user_name, cb) {
   if (text == undefined || text == null || text == "") {
     throw new Error('Format is ' + command + ' name | member | label | description');
-  } else {
-    var wat = listid;
-    throw new Error('list id is ' + wat);
-  }
+  } 
 
   var trelloArgs;
   if (text.indexOf('|') > -1) {
@@ -84,10 +81,8 @@ function postToTrello(listId, command, text, user_name, cb) {
   var cardName;
   if( typeof trelloArgs === 'string' ) {
     cardName = trelloArgs;
-    throw new Error('Format is string ' + cardName + 'listid = ' + listid);
   } else {
     cardName = trelloArgs[0];
-    throw new Error('Format is array ' + cardName + 'listid = ' + listid);
   }
 
   var card_data = {
