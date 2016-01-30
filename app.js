@@ -23,11 +23,13 @@ function postToTrello(listId, command, text, user_name, cb) {
 
   //stupid hack for injecting member names
   var idMembers = "";
-  // if (text.indexOf('|') > -1) {
+  if (text.indexOf('|') > -1) {
   //   if (trelloArgs[1] == undefined || trelloArgs[1] == null || trelloArgs[1] == "") {
   //     idMembers = "";
   //   else {
-  //     idMembers = trelloArgs[1].replace(/\s+/g, '');
+       idMembers = trelloArgs[1].replace(/\s+/g, '');
+       throw new Error('member is ' + idMembers);
+
   //   }  
 
   //   if (idMembers == "nate" || idMembers == "nathan") {
@@ -47,9 +49,7 @@ function postToTrello(listId, command, text, user_name, cb) {
   //   } else if (idMembers == "harris") {
   //     idMembers = "52032ab362af020708000872";
   //   };
-  // } else {
-  //   idMembers = "";
-  // };
+  }
   
 
   // //stupid hack for injecting labels
