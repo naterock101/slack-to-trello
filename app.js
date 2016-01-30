@@ -14,7 +14,10 @@ function postToTrello(listId, command, text, user_name, cb) {
     throw new Error('Format is ' + command + ' name | member | label | description');
   }
 
-  var name_and_desc = text.split('|');
+  var trelloArgs = text;
+  if (text.indexOf('|') > -1) {
+    trelloArgs = text.split('|');
+  };
 
   //stupid hack for injecting member names
   // var idMembers;
@@ -73,8 +76,15 @@ function postToTrello(listId, command, text, user_name, cb) {
   //   cardDescription = name_and_desc[3].replace(/\s+/g, '');
   // };
 
+  var cardName;
+  if( typeof trelloArgs === 'string' ) {
+    cardName = trelloArgs;
+  } else {
+    cardName = trelloArgs[0];
+  }
+
   var card_data = {
-    'name' : name_and_desc[0] + ' (@' + user_name + ')',
+    'name' : cardName + ' (@' + user_name + ')',
     'idMembers' : null,
     'idLabels' : null,
     'desc' : null,
