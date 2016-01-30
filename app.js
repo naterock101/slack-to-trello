@@ -77,10 +77,12 @@ function postToTrello(listId, command, text, user_name, cb) {
     idLabelColor = "55778e29664ce8ff30a343ff";
   };
 
-  // var cardDescription = null;
-  // if (name_and_desc[3] !== null) {
-  //   cardDescription = name_and_desc[3].replace(/\s+/g, '');
-  // };
+  var cardDescription = "";
+  if (trelloArgs[3] == undefined || trelloArgs[3] == null || trelloArgs[3] == "") {
+    cardDescription = "";
+  } else {
+    cardDescription = trelloArgs[3];
+  };
 
   var cardName;
   if( typeof trelloArgs === 'string' ) {
@@ -93,7 +95,7 @@ function postToTrello(listId, command, text, user_name, cb) {
     'name' : cardName + ' (@' + user_name + ')',
     'idMembers' : idMembers,
     'idLabels' : idLabelColor,
-    'desc' : null,
+    'desc' : cardDescription,
     'due' : null,
     'idList' : listId,
     'urlSource' : null
