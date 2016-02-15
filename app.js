@@ -45,6 +45,10 @@ function postToTrello(listId, command, text, user_name, cb) {
       idMembers = "5580a1b779d64277225f6c39";
     } else if (idMembers == "harris") {
       idMembers = "52032ab362af020708000872";
+    } else if (idMembers == "bruno") {
+      idMembers = "56c1f6a423cc654126ca9499";
+    } else if (idMembers == "victor") {
+      idMembers = "53fccbd5a3dba545de696f74";
     } else if (idMembers.length > 0) {
       throw new Error(idMembers + ' is not a real person. Or at least not a fishbit. try again.');
     };
